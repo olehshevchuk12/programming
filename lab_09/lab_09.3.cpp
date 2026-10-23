@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-  long long Factorial(int n)
+  long Factorial(int n)
 {
-      long long f = 1;
+      long f = 1;
 
     for (int i = 1; i <= n; i++)
         f *= i;
