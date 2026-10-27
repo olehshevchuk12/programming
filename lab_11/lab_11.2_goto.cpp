@@ -22,7 +22,7 @@ double f14(double x)
 
 int main()
 {
-    char tup robit;          
+    char tup_robit;          
     double nar_sumu;           
     double stavka_podat;     
     double syma_podat;         
@@ -30,11 +30,11 @@ int main()
 
 input:
     cout << "Vvedit tup robotu (A, B abo C): ";
-    cin >> tup robit;
+    cin >> tup_robit;
 
-    if (tup robit == 'A') goto workA;
-    if (tup robit == 'B') goto workB;
-    if (tup robit == 'C') goto workC;
+    if (tup_robit == 'A') goto workA;
+    if (tup_robit == 'B') goto workB;
+    if (tup_robit == 'C') goto workC;
 
     cout << "Pomulka: nevirnui tup robotu." << endl;
     goto input;
