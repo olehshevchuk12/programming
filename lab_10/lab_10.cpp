@@ -31,13 +31,10 @@ int main()
     int crew, passengers, closet, baggage, fuel;
     float totalWt, centerOfGravity;
 
-    // 1. Отримуємо вхідні дані
     GetData(crew, passengers, closet, baggage, fuel);
 
-    // 2. Загальна вага
     totalWt = EMPTY_WEIGHT + float(passengers + crew) * PERSON_WT + float(baggage + closet) + float(fuel) * LBS_PER_GAL;
 
-    // 3. Центр ваги
     centerOfGravity = (CrewMoment(crew) + PassengerMoment(passengers) + CargoMoment(closet, baggage) + FuelMoment(fuel) + EMPTY_MOMENT) / totalWt;
 
     
