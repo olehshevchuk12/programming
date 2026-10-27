@@ -7,7 +7,6 @@ const float LBS_PER_GAL  = 6.7;
 const float EMPTY_WEIGHT = 9887.0;     
 const float EMPTY_MOMENT = 3185853.0;  
 
-// Відстані до носу літака (дюйми) 
 const float CREW_DIST    = 143.0;
 const float ROW1_DIST    = 219.0;
 const float ROW2_DIST    = 265.0;
@@ -15,8 +14,7 @@ const float ROW3_DIST    = 295.0;
 const float ROW4_DIST    = 341.0;
 const float CLOSET_DIST  = 182.0;
 const float BAGGAGE_DIST = 386.0;
-
-// Критичні значення для попередження 
+ 
 const float MAX_WEIGHT = 14900.0;
 const float MIN_CG     = 300.0;
 const float MAX_CG     = 330.0;
@@ -53,13 +51,11 @@ int main()
     return 0;
 }
 
-// Отримання даних
 void GetData(int& crew, int& passengers, int& closet, int& baggage, int& fuel)
 {
     cin >> crew >> passengers >> closet >> baggage >> fuel;
 }
 
-// Момент команди
 float CrewMoment(int crew)
 {
     return float(crew) * PERSON_WT * CREW_DIST;
@@ -88,13 +84,11 @@ float PassengerMoment(int passengers)
     return moment;
 }
 
-// Момент туалету і багажу
 float CargoMoment(int closet, int baggage)
 {
     return float(closet) * CLOSET_DIST + float(baggage) * BAGGAGE_DIST;
 }
-
-// Момент палива: відстань D залежить від кількості палива G 
+ 
 float FuelMoment(int fuel)
 {
     float D;
@@ -112,7 +106,6 @@ float FuelMoment(int fuel)
     return G * LBS_PER_GAL * D;
 }
 
-// Попередження пілоту
 void PrintWarning(float totalWt, float centerOfGravity)
 {
     if (totalWt > MAX_WEIGHT)
