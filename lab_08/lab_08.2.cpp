@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void printSymbol(char symbol, int n) // Функція виводить символ задану кількість разів
+void printSymbol(char symbol, int n) 
 {
     for (int i = 0; i < n; i++)
     {
