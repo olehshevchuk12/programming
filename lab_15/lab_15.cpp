@@ -28,30 +28,30 @@ int main()
         if (y[k] > ymax) ymax = y[k];
 
     double third = y[2];
-    double lo;
+    double low;
 
     if (third < ymax)
     {
-    lo = third;
+    low = third;
     }
     else
     {
-    lo = ymax;
+    low = ymax;
     }
     double hi;
 
     if (third < ymax)
     {
-    hi = ymax;
+    high = ymax;
     }
     else
     {
-    hi = third;
+    high = third;
     }
 
    for (int k = 0; k < N; k++)
 {
-    if (y[k] > lo && y[k] < hi)
+    if (y[k] > low && y[k] < high)
     {
         z[m] = y[k];
         m++;
