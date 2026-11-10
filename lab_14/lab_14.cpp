@@ -29,8 +29,8 @@ int main()
     int cntProfit = 0;
     for (int i = 0; i < N; i++)
     {
-        if (y[i] > 0) { sumProfit += y[i]; cntProfit++; }
-        else if (y[i] < 0) sumLoss += y[i];
+        if (y[i] > 0) { sumProfit = sumProfit + y[i]; cntProfit++; }
+        else if (y[i] < 0) sumLoss = sumLoss + y[i];
     }
 
     cout << endl;
