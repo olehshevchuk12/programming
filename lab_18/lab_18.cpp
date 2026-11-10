@@ -25,7 +25,7 @@ void PrintBook(const Book& book) {
          << book.publisher << " | "
          << book.year << " | "
          << book.pages << " pages | "
-         << book.price << " UAH\n";
+         << book.price << " UAH";
 }
 
 void PrintBooks(const vector<Book>& books) {
@@ -45,14 +45,14 @@ int main() {
         {"Fieldwork in Ukrainian Sex",     {"Zabuzhko",      "Oksana"},   "Komora",   2020, 350, 420.0}
     };
 
-    cout << "All library books:\n";
+    cout << "All library books:";
     PrintBooks(books);
 
     const int minYear = 2012;
     const double maxPrice = 350.0;
 
-    cout << "\nBooks published from " << minYear << " and cheaper than "
-         << maxPrice << " UAH:\n";
+    cout << "Books published from " << minYear << " and cheaper than "
+         << maxPrice << " UAH:";
 
     bool found = false;
     for (const Book& book : books) {
@@ -62,7 +62,7 @@ int main() {
         }
     }
     if (!found) {
-        cout << "Nothing found\n";
+        cout << "Nothing found";
     }
     return 0;
 }
