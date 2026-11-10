@@ -3,7 +3,6 @@
 #include <cmath>
 using namespace std;
 
-const int VARIANT = 10;
 const int N = 11;                      
 
 double f(double x)
