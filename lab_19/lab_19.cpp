@@ -56,11 +56,11 @@ int main()
 
     vector<double> above;
 
-for (int row = 0; row < N; row++)
+for (int k = 0; k < N; k++)
 {
-    for (int col = row + 1; col < N; col++)
+    for (int n = k + 1; n < N; n++)
     {
-        above.push_back(a[row][col]);
+        above.push_back(a[k][n]);
     }
 }
 
