@@ -34,7 +34,7 @@ int main()
         }
         if (y < 0)
         {
-            prod *= y;
+            prod = prod * y;
             cntNeg++;
         }
     }
