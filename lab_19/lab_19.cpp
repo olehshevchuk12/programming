@@ -19,10 +19,13 @@ double f23(double x)
 
 void FillMatrix(MatrixType a)
 {
-    for (int k = 1; k <= N; k++)
-        for (int n = 1; n <= N; n++)
-            a[k - 1][n - 1] = n * f22(k) + sin(k) * f23(n);
-}
+    for (int k = 0; k < N; k++)
+    {
+        for (int n = 0; n < N; n++)
+        {
+            a[k][n] = (n + 1) * f22(k + 1) + sin(k + 1) * f23(n + 1);
+        }
+    }
 
 void PrintMatrix(MatrixType a)
 {
@@ -64,7 +67,7 @@ int main()
     for (size_t i = 0; i < above.size(); i++)
     {
         cout << setw(12) << fixed << setprecision(4) << above[i];
-        product *= above[i];
+        product = product * above[i];
     }
     cout << endl;
 
