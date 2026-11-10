@@ -9,12 +9,16 @@ int main() {
     cin.getline(str, 256);
 
     char* words[128];
-    int count = 0;
-    char* token = strtok(str, " ");
-    while (token != NULL) {
-        words[count++] = token;
-        token = strtok(NULL, " ");
-    }
+int count = 0;
+
+char* token = strtok(str, " ");
+
+while (token != NULL)
+{
+    words[count] = token;
+    count++;
+    token = strtok(NULL, " ");
+}
 
     for (int i = 1; i < count; i++) {
         char* key = words[i];
