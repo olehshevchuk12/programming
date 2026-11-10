@@ -47,7 +47,6 @@ int main()
     for (int k = 0; k < NUM_TOWNS; k++)
         first[k] = votes[k][0];
 
-    // Maximum of the first candidate's votes
     int maxVotes = first[0];
     for (int k = 1; k < NUM_TOWNS; k++)
         if (first[k] > maxVotes)
