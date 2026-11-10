@@ -55,9 +55,14 @@ int main()
          << "indices (k, n) = (" << maxK + 1 << ", " << maxN + 1 << ")" << endl;
 
     vector<double> above;
-    for (int k = 0; k < N; k++)
-        for (int n = k + 1; n < N; n++)
-            above.push_back(a[k][n]);
+
+for (int row = 0; row < N; row++)
+{
+    for (int col = row + 1; col < N; col++)
+    {
+        above.push_back(a[row][col]);
+    }
+}
 
     cout << "Elements above the main diagonal:" << endl;
     double product = 1;
