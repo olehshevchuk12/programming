@@ -3,7 +3,6 @@
 #include <cmath>
 using namespace std;
 
-const int VARIANT = 10;
 const int N = 7;                       
 
 double f(double x)
@@ -29,13 +28,35 @@ int main()
         if (y[k] > ymax) ymax = y[k];
 
     double third = y[2];
-    double lo = (third < ymax) ? third : ymax;
-    double hi = (third < ymax) ? ymax : third;
+    double lo;
 
-    for (int k = 0; k < N; k++)
-        if (y[k] > lo && y[k] < hi)
-            z[m++] = y[k];
+    if (third < ymax)
+    {
+    lo = third;
+    }
+    else
+    {
+    lo = ymax;
+    }
+    double hi;
 
+    if (third < ymax)
+    {
+    hi = ymax;
+    }
+    else
+    {
+    hi = third;
+    }
+
+   for (int k = 0; k < N; k++)
+{
+    if (y[k] > lo && y[k] < hi)
+    {
+        z[m] = y[k];
+        m++;
+    }
+}
     cout << endl << "The third element = " << third
          << ", max = " << ymax << endl;
 
