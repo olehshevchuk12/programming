@@ -52,7 +52,7 @@ void Subtract(Matrix a, Matrix b, Matrix res) {
 void PrintMatrix(Matrix m) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++)
-            cout << m[i][j] << "\t";
+            cout << m[i][j] << " ";
         cout << endl;
     }
 }
@@ -75,7 +75,7 @@ int main() {
 
     WriteMatrix("c.txt", C);
 
-    cout << "Matrix C:\n";
+    cout << "Matrix C:";
     PrintMatrix(C);
 
     return 0;
