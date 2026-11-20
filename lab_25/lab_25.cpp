@@ -1,84 +1,84 @@
-
 #include <iostream>
 #include <vector>
 #include <map>
 
 using namespace std;
 
-template <typename T>
-T Sqr(const T& x);
-
-template <typename First, typename Second>
-pair<First, Second> Sqr(const pair<First, Second>& p);
-
-template <typename T>
-vector<T> Sqr(const vector<T>& v);
-
-template <typename Key, typename Value>
-map<Key, Value> Sqr(const map<Key, Value>& m);
-
-template <typename T>
-T Sqr(const T& x)
+template <class T>
+T Sqr(T x)
 {
     return x * x;
 }
 
-template <typename First, typename Second>
-pair<First, Second> Sqr(const pair<First, Second>& p)
+template <class T1, class T2>
+pair<T1, T2> Sqr(pair<T1, T2> p)
 {
-    return {Sqr(p.first), Sqr(p.second)};
-}
+    pair<T1, T2> result;
 
-template <typename T>
-vector<T> Sqr(const vector<T>& v)
-{
-    vector<T> result;
-
-    for (const auto& x : v)
-    {
-        result.push_back(Sqr(x));
-    }
+    result.first = Sqr(p.first);
+    result.second = Sqr(p.second);
 
     return result;
 }
 
-template <typename Key, typename Value>
-map<Key, Value> Sqr(const map<Key, Value>& m)
+template <class T>
+vector<T> Sqr(vector<T> v)
 {
-    map<Key, Value> result;
-
-    for (const auto& x : m)
+    for (int i = 0; i < v.size(); i++)
     {
-        result[x.first] = Sqr(x.second);
+        v[i] = Sqr(v[i]);
     }
 
-    return result;
+    return v;
+}
+
+template <class K, class V>
+map<K, V> Sqr(map<K, V> m)
+{
+    for (auto& element : m)
+    {
+        element.second = Sqr(element.second);
+    }
+
+    return m;
 }
 
 int main()
 {
-    vector<int> v = {1, 2, 3};
+    vector<int> numbers = {1, 2, 3};
 
-    cout << "vector:";
-    for (int x : Sqr(v))
+    vector<int> resultVector = Sqr(numbers);
+
+    cout << "Vector: ";
+
+    for (int x : resultVector)
     {
-        cout << " " << x;
+        cout << x << " ";
     }
-    cout << endl;
 
-    map<int, pair<int, int>> map_of_pairs =
+    cout << endl << endl;
+
+    map<int, pair<int, int>> data =
     {
         {4, {2, 2}},
         {7, {4, 3}}
     };
 
-    cout << "map of pairs:" << endl;
+    map<int, pair<int, int>> resultMap = Sqr(data);
 
-    for (const auto& x : Sqr(map_of_pairs))
+    cout << "Map:" << endl;
+
+    for (auto element : resultMap)
     {
-        cout << x.first << " "
-             << x.second.first << " "
-             << x.second.second << endl;
+        cout << "Key = " << element.first << endl;
+
+        cout << "First value = "
+             << element.second.first << endl;
+
+        cout << "Second value = "
+             << element.second.second << endl;
+
+        cout << endl;
     }
 
     return 0;
