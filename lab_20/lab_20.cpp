@@ -4,8 +4,7 @@
 #include <cstdlib>
 #include <ctime>
 using namespace std;
-
-const int VARIANT = 10;    
+    
 const int NUM_TOWNS = 6;    
 const int NUM_CANDS = 5;   
 typedef int VotesType[NUM_TOWNS][NUM_CANDS];
